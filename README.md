@@ -1,4 +1,4 @@
-# nalu
+# Nalu
 
 Inventory Control  
 Team Nalu:
