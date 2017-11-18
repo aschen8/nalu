@@ -39,7 +39,9 @@ $("#submitButton").on("click", function(event) {
       $("business").prepend(row);
       
     });
-  // Empty each input box by replacing the value with an empty string
-  $("#author").val("");
-  $("#chirp-box").val("");
-});
+  row.append("Sku: " + data[i].sku + " // ";
+      row.append("Product Name: " + data[i].product_name + "  //  ";
+      row.append("Price: $" + data[i].price + "  //  ";
+      row.append("Category: " + data[i].category_name + "  //  ";
+      row.append("Quantity: " + data[i].stock_quantity + "\n";
+      $("business").prepend(row);
