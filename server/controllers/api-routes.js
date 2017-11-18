@@ -7,7 +7,7 @@ var connection = require("../config/businessManager.js");
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // Get all chirps
+  // Get all inventory
   app.get("/api/all", function(req, res) {
     var dbQuery = "SELECT * FROM business";
     connection.query(dbQuery, function(err, result) {
