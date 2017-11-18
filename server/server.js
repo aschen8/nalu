@@ -281,7 +281,7 @@ function createNewProduct() {
 
 // runBamazon will execute the main application logic
 function runBusiness() {
-	// console.log('___ENTER runBamazon___');
+	// console.log('___ENTER runBusiness___');
 
 	// Prompt manager for input
 	promptManagerAction();
