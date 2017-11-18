@@ -11,7 +11,7 @@ $.get("/api/all", function(data) {
       row.append("Price: $" + data[i].price + "  //  ";
       row.append("Category: " + data[i].category_name + "  //  ";
       row.append("Quantity: " + data[i].stock_quantity + "\n";
-      $("business").prepend(row);
+      $("inventory-table").prepend(row);
     }
   }
 });
@@ -20,9 +20,10 @@ $("#submitButton").on("click", function(event) {
   event.preventDefault();
   // Make a newItem object
   var newItem = {
-    author: $("#author").val().trim(),
-    body: $("#chirp-box").val().trim(),
-    created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+    productName: $("#productName").val().trim(),
+    price: $("#price").val().trim(),
+    category: $("#category").val().trim(),
+    quantity: $("#quantity").val().trim(),
   };
   console.log(newItem);
   // Send an AJAX POST-request with jQuery
@@ -36,12 +37,10 @@ $("#submitButton").on("click", function(event) {
       row.append("Price: $" + data[i].price + "  //  ";
       row.append("Category: " + data[i].category_name + "  //  ";
       row.append("Quantity: " + data[i].stock_quantity + "\n";
-      $("business").prepend(row);
+      $("inventory-table").prepend(row);
       
     });
-  row.append("Sku: " + data[i].sku + " // ";
-      row.append("Product Name: " + data[i].product_name + "  //  ";
-      row.append("Price: $" + data[i].price + "  //  ";
-      row.append("Category: " + data[i].category_name + "  //  ";
-      row.append("Quantity: " + data[i].stock_quantity + "\n";
-      $("business").prepend(row);
+      // Empty each input box by replacing the value with an empty string
+  $("#item_ID").val("");
+  $("#item_ID-box").val("");
+});
