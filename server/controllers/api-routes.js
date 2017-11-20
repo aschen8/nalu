@@ -3,19 +3,19 @@
 // *********************************************************************************
 // Dependencies
 // =============================================================
-var connection = require("../config/businessManager.js");
+var connection = require("../config/connection.js");
 // Routes
 // =============================================================
 module.exports = function(app) {
   // Get all chirps
-  app.get("/api/all", function(req, res) {
+  app.get("/inventory", function(req, res) {
     var dbQuery = "SELECT * FROM business";
     connection.query(dbQuery, function(err, result) {
       res.json(result);
     });
   });
 
-  app.post("/api/new", function(req, res) {
+  app.post("/new", function(req, res) {
     console.log("Business Data:");
     console.log(req.body);
     var dbQuery = "INSERT INTO business (ItemID, product_name, sku, category_name, price, stock_quantity) VALUES (?,?,?)";
