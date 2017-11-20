@@ -1,11 +1,16 @@
 /* Ajax push to page */
+console.log("business.js is connected");
+
+module.exports = function(inventory) {
+
 
 // When the page loads, grab and display all of our inventory
 $.get("/inventory", function(data) {
+  console.log("/inventory ajax call");
+  console.log(data);
   if (data.length !== 0) {
     for (var i = 0; i < data.length; i++) {
       response = $.parseJSON(response);
-
         $(function() {
             $.each(response, function(i, data) {
                 var $tr = $('<tr>').append(
@@ -64,10 +69,4 @@ $.get("/inventory", function(data) {
 //       row.append("Quantity: " + data[i].stock_quantity + "\n";
 //       $("business").prepend(row);
 
-
-// script from train scheduler
-
-// <script>
-//  $("#tableID > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" +
-//   trainFreq + "</td><td>" + firstTrain + "</td><td>" + minutesToArrival);
-// </script>
+};

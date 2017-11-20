@@ -1,14 +1,19 @@
 // *********************************************************************************
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
+console.log("api-routes.js is connected");
+
 // Dependencies
 // =============================================================
 var connection = require("../config/connection.js");
+var business = require("./business.js");
+
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // Get all chirps
-  app.get("/inventory", function(req, res) {
+
+  // Get all products
+  app.get("/inventory.html", function(req, res) {
     var dbQuery = "SELECT * FROM business";
     connection.query(dbQuery, function(err, result) {
       res.json(result);

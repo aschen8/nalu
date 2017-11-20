@@ -1,5 +1,7 @@
 // Pull in required dependencies
 // var inquirer = require("inquirer");
+console.log("server.js is connected");
+
 var mysql = require("mysql");
 
 // Define the MySQL connection parameters
@@ -11,8 +13,8 @@ var connection = mysql.createConnection({
 	user: "root",
 
 	// Your password
-	password: "12345",
-	database: "business"
+	password: "",
+	database: "business",
 });
 
 // promptManagerAction will present menu options to the manager and trigger appropriate logic
@@ -279,9 +281,9 @@ function createNewProduct() {
 	})
 }
 
-// runBamazon will execute the main application logic
+// runBusiness will execute the main application logic
 function runBusiness() {
-	// console.log('___ENTER runBamazon___');
+	// console.log('___ENTER runBusiness___');
 
 	// Prompt manager for input
 	promptManagerAction();

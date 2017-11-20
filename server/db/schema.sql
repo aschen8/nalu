@@ -1,3 +1,6 @@
+create database business;
+	use business;
+
 
 -- Create a table called 'products' which will contain the store inventory --
 CREATE TABLE products(
