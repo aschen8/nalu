@@ -279,7 +279,7 @@ function createNewProduct() {
 	})
 }
 
-// runBamazon will execute the main application logic
+// runBusiness will execute the main application logic
 function runBusiness() {
 	// console.log('___ENTER runBusiness___');
 
