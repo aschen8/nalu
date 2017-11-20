@@ -1,21 +1,26 @@
 // *********************************************************************************
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
+console.log("api-routes.js is connected");
+
 // Dependencies
 // =============================================================
-var connection = require("../config/businessManager.js");
+var connection = require("../config/connection.js");
+var business = require("./business.js");
+
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // Get all inventory
-  app.get("/api/all", function(req, res) {
+
+  // Get all products
+  app.get("/inventory.html", function(req, res) {
     var dbQuery = "SELECT * FROM business";
     connection.query(dbQuery, function(err, result) {
       res.json(result);
     });
   });
 
-  app.post("/api/new", function(req, res) {
+  app.post("/new", function(req, res) {
     console.log("Business Data:");
     console.log(req.body);
     var dbQuery = "INSERT INTO business (ItemID, product_name, sku, category_name, price, stock_quantity) VALUES (?,?,?)";

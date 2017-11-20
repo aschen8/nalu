@@ -1,0 +1,25 @@
+{
+  "name": "nalu",
+  "version": "1.0.0",
+  "description": "Inventory Control   Team Nalu: (Andy Chen, Chryssa Jones, Omar Vazquez)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aschen8/nalu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aschen8/nalu/issues"
+  },
+  "homepage": "https://github.com/aschen8/nalu#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}
