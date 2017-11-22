@@ -12,7 +12,7 @@ var connection = require("../config/connection.js");
 module.exports = function(app) {
 
   // Get all products
-  app.get("/inventory", function(req, res) {
+  app.get('/inventory', function(req, res) {
     console.log("the API is connected");
     var dbQuery = "SELECT * FROM business";
     connection.query(dbQuery, function(err, result) {
