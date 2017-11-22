@@ -16,6 +16,14 @@ $.get("/inventory", function(data) {
                     $('<td>').text(data.product_name),
                     $('<td>').text(data.price),
                     $('<td>').text(data.stock_quantity)
+                    // $('<i>' {
+                    //   class: "fa fa-plus-circle",
+                    //   id: ("add" + i)
+                    // })
+                    // $('<i>' {
+                    //   class: "fa fa-minus-circle",
+                    //   id: ("subtract" + i)
+                    // })
                 ).appendTo('#dataTable');
                 // console.log($tr.wrap('<p>').html());
             });
