@@ -6,6 +6,8 @@ console.log("api-routes.js is connected");
 // Dependencies
 // =============================================================
 var connection = require("../config/connection.js");
+var express = require('express');
+var app = express();
 
 // Routes
 // =============================================================
