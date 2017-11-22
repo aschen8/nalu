@@ -1,7 +1,3 @@
-/* Ajax push to page */
-console.log("business.js is connected");
-
-module.exports = function(inventory) {
 
 
 // When the page loads, grab and display all of our inventory
