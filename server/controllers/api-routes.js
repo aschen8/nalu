@@ -6,13 +6,15 @@ console.log("api-routes.js is connected");
 // Dependencies
 // =============================================================
 var connection = require("../config/connection.js");
+var express = require('express');
+var app = express();
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
   // Get all products
-  app.get("/inventory", function(req, res) {
+  app.get('/inventory', function(req, res) {
     console.log("the API is connected");
     var dbQuery = "SELECT * FROM business";
     connection.query(dbQuery, function(err, result) {
