@@ -1,4 +1,5 @@
-
+/* Ajax push to page */
+console.log("business.js is connected");
 
 // When the page loads, grab and display all of our inventory
 $.get("/inventory", function(data) {
@@ -65,4 +66,3 @@ $.get("/inventory", function(data) {
 //       row.append("Quantity: " + data[i].stock_quantity + "\n";
 //       $("business").prepend(row);
 
-};
