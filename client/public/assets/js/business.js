@@ -1,52 +1,40 @@
-/* Ajax push to page */
-console.log("business.js is connected");
 
-// When the page loads, grab and display all of our inventory
-$.get('/inventory', function(data) {
-  console.log("inventory ajax call");
-  console.log(data);
-  if (data.length !== 0) {
-    for (var i = 0; i < data.length; i++) {
-      response = $.parseJSON(response);
-        $(function() {
-            $.each(response, function(i, data) {
-                var $tr = $('<tr>').append(
-                    $('<td>').text(data.item_id),
-                    $('<td>').text(data.category_name),
-                    $('<td>').text(data.product_name),
-                    $('<td>').text(data.price),
-                    $('<td>').text(data.stock_quantity)
-                    // $('<i>' {
-                    //   class: "fa fa-plus-circle",
-                    //   id: ("add" + i)
-                    // })
-                    // $('<i>' {
-                    //   class: "fa fa-minus-circle",
-                    //   id: ("subtract" + i)
-                    // })
-                ).appendTo('#dataTable');
-                // console.log($tr.wrap('<p>').html());
-            });
-        });
+    $.get('/inventory', function(data) {
+      console.log("inventory ajax call");
+      console.log(data);
 
-      // var row = $("tr");
-      // row.addClass("Item");
-      // row.append("Item ID: " + data[i].item_id + "  //  ";
-      // row.append("Sku: " + data[i].sku + " // ";
-      // row.append("Product Name: " + data[i].product_name + "  //  ";
-      // row.append("Price: $" + data[i].price + "  //  ";
-      // row.append("Category: " + data[i].category_name + "  //  ";
-      // row.append("Quantity: " + data[i].stock_quantity + "\n";
-      // $("business").prepend(row);
-    }
-  }
-});
+      var tbody = $('tbody');
 
+      for (var i = 0; i < data.length; i++) {
+        var row = data[i];
 
-// // When manager adds to inventory (clicks addBtn)
+        console.log(row);
+
+        for (var prop in row) {
+          console.log(row[prop])
+        }
+      }
+      // if (data.length !== 0) {
+      //   for (var i = 0; i < data.length; i++) {
+      //     var $tr = $('<tr>').append(
+      //         $('<td>').text(data.item_id),
+      //         $('<td>').text(data.sku),
+      //         $('<td>').text(data.category_name),
+      //         $('<td>').text(data.product_name),
+      //         $('<td').text(data.cost),
+      //         $('<td>').text(data.price),
+      //         $('<td>').text(data.stock_quantity),
+      //         $('<td>').text(data.reorder_quantity),
+      //     ).appendTo('#dataTable');
+      //     // console.log($tr.wrap('<p>').html());
+      //     }
+      //   }
+      });
+
+// When manager adds to inventory (clicks addBtn)
 // $("#submitButton").on("click", function(event) {
 //   event.preventDefault();
-//   // Make a newItem object
+  // Make a newItem object
 //   var newItem = {
 //     author: $("#author").val().trim(),
 //     body: $("#chirp-box").val().trim(),
@@ -74,3 +62,4 @@ $.get('/inventory', function(data) {
 //       row.append("Quantity: " + data[i].stock_quantity + "\n";
 //       $("business").prepend(row);
 
+// closes the document.ready function
