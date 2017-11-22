@@ -11,8 +11,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     <script src="https://use.fontawesome.com/1128334790.js"></script>
     <link rel="stylesheet" type ="text/css" href="assets/css/bootstrap.css">
-    <!-- <link rel="stylesheet" type ="text/css" href="assets/css/dataTables.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/admin.css"> -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">     
 </head>
 
@@ -256,6 +254,84 @@
 </div>
 
 
+<!-- Edit Product Modal -->
+<div id="editProductModal" class="modal">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2></h2>
+    </div>
+
+    <div class="modal-body">
+      <form id="newProductForm" class="form-horizontal">
+      <fieldset>
+        <div class= "panel panel-info">
+          <div class="panel-heading">
+            <h2>Add a Product</h2>
+          </div>
+        </div>
+          <div class="form-row">
+            <div class="form-group col-md-5">
+              <label for="inputName">Product Name</label>
+              <input type="text" class="form-control" id="inputName" placeholder="what is this product called?">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputCategory">Category</label>
+              <input type="text" class="form-control" id="inputCategory" placeholder="what category does this product belong in?">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputSKU">SKU Number</label>
+              <input type="number" class="form-control" id="inputSKU" placeholder="enter the SKU">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-9">
+              <label for="inputDescr">Product Description</label>
+              <input type="textarea" class="form-control" id="inputDesc" placeholder="product description">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputImgURL">Image Link</label>
+              <input type="url" class="form-control" id="inputImgURL" placeholder="paste URL here">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="inputCost">Purchase Cost</label>
+              <input type="number" class="form-control" id="inputCost" placeholder="$">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputRetail">Retail Price</label>
+              <input type="number" class="form-control" id="inputRetail" placeholder="$">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputSale">Discount %</label>
+              <input type="number" class="form-control" id="inputSale" placeholder="%">
+            </div>
+            <div class="form-group col-md-2">
+              <!-- empty div for spacing -->
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputQty">Qty in Stock</label>
+              <input type="number" class="form-control" id="inputQty" placeholder="#">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputReorder">Reorder Level</label>
+              <input type="number" class="form-control" id="inputReorder" placeholder="#">
+            </div>
+          </div>  
+        <a href="#" class="btn btn-success" id="saveBtn"><i class="fa fa-floppy-o"></i> Save Item</a>
+        <a href="#" class="btn btn-warning" id="cancelBtn"><i class="fa fa-ban"></i> Cancel</a>
+      </fieldset>
+      </form>
+    </div>
+
+    <div class="modal-footer">
+      <h3></h3>
+    </div>
+  </div>
+</div>
+
 <!-- Logout Modal-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -275,21 +351,14 @@
   </div>
 </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
-    <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-    <!-- Core plugin JavaScript-->
-    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
-    <!-- Page level plugin JavaScript-->
-    <!-- <script src="vendor/datatables/jquery.dataTables.js"></script> -->
-    <!-- <script src="vendor/datatables/dataTables.bootstrap4.js"></script> -->
-    <!-- Custom scripts for all pages-->
-    <!-- <script src="js/sb-admin.min.js"></script> -->
-    <!-- Custom scripts for this page-->
-    <!-- <script src="js/sb-admin-datatables.min.js"></script> -->
+
+
 
 <!-- Core JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
+
 
 <!-- custom JS scripts -->
 <script src="assets/js/business.js"></script>
