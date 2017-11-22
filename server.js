@@ -1,5 +1,5 @@
 // *********************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
+// Server.js - This file is the initial starting point for Nalu's Node/Express server.
 // *********************************************************************************
 
 // Dependencies
