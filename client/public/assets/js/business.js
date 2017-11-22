@@ -5,6 +5,7 @@ console.log("business.js is connected");
 $.get('/inventory', function(data) {
   console.log("inventory ajax call");
   console.log(data);
+<<<<<<< HEAD
   // if (data.length !== 0) {
   //   for (var i = 0; i < data.length; i++) {
   //     response = $.parseJSON(response);
@@ -21,6 +22,43 @@ $.get('/inventory', function(data) {
   //       });
   //   }
   // }
+=======
+  if (data.length !== 0) {
+    for (var i = 0; i < data.length; i++) {
+      response = $.parseJSON(response);
+        $(function() {
+            $.each(response, function(i, data) {
+                var $tr = $('<tr>').append(
+                    $('<td>').text(data.item_id),
+                    $('<td>').text(data.category_name),
+                    $('<td>').text(data.product_name),
+                    $('<td>').text(data.price),
+                    $('<td>').text(data.stock_quantity)
+                    // $('<i>' {
+                    //   class: "fa fa-plus-circle",
+                    //   id: ("add" + i)
+                    // })
+                    // $('<i>' {
+                    //   class: "fa fa-minus-circle",
+                    //   id: ("subtract" + i)
+                    // })
+                ).appendTo('#dataTable');
+                // console.log($tr.wrap('<p>').html());
+            });
+        });
+
+      // var row = $("tr");
+      // row.addClass("Item");
+      // row.append("Item ID: " + data[i].item_id + "  //  ";
+      // row.append("Sku: " + data[i].sku + " // ";
+      // row.append("Product Name: " + data[i].product_name + "  //  ";
+      // row.append("Price: $" + data[i].price + "  //  ";
+      // row.append("Category: " + data[i].category_name + "  //  ";
+      // row.append("Quantity: " + data[i].stock_quantity + "\n";
+      // $("business").prepend(row);
+    }
+  }
+>>>>>>> 997a47150ca0e318dfe7bb43774d4f89b6b9c9e3
 });
 
 
