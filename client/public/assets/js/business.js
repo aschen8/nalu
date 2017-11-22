@@ -2,7 +2,7 @@
 console.log("business.js is connected");
 
 // When the page loads, grab and display all of our inventory
-$.get("/inventory", function(data) {
+$.get('/inventory', function(data) {
   console.log("inventory ajax call");
   console.log(data);
   if (data.length !== 0) {
