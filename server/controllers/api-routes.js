@@ -15,12 +15,13 @@ module.exports = function(app) {
 
   // Get all products
   app.get('/inventory', function(req, res) {
-    console.log("the API is connected");
-    res.json({some: 'data'})
-    // var dbQuery = "SELECT * FROM business";
-    // connection.query(dbQuery, function(err, result) {
-    //   res.json(result);
-    // });
+
+    var dbQuery = "SELECT * FROM products";
+    connection.query(dbQuery, function(err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+
   });
 
   // app.post("/new", function(req, res) {
