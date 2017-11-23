@@ -1,9 +1,38 @@
+$.get('/inventory', function(data) {
+  console.log("inventory ajax call");
+  console.log(data);
 
-    $.get('/inventory', function(data) {
-      console.log("inventory ajax call");
-      console.log(data);
+  var tbody = $('tbody');
 
-      var tbody = $('tbody');
+  if (data.length !== 0) {
+    for (var i = 0; i < data.length; i++) {
+      response = $.parseJSON(response);
+        $(function() {
+            $.each(response, function(i, data) {
+                var $tr = $('<tr>').append(
+                    $('<td>').text(data.item_id),
+                    $('<td>').text(data.category_name),
+                    $('<td>').text(data.product_name),
+                    $('<td>').text(data.price),
+                    $('<td>').text(data.stock_quantity)
+                    // $('<i>' {
+                    //   class: "fa fa-plus-circle",
+                    //   id: ("add" + i)
+                    // })
+                    // $('<i>' {
+                    //   class: "fa fa-minus-circle",
+                    //   id: ("subtract" + i)
+                    // })
+                ).appendTo('#dataTable');
+                // console.log($tr.wrap('<p>').html());
+            });
+        });
+
+    }
+  }
+
+});
+
 
       for (var i = 0; i < data.length; i++) {
         var row = data[i];

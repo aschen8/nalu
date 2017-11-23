@@ -5,7 +5,7 @@ console.log("api-routes.js is connected");
 
 // Dependencies
 // =============================================================
-var connection = require("../config/connection.js");
+//var connection = require("../config/connection.js");
 var express = require('express');
 var app = express();
 
@@ -15,11 +15,13 @@ module.exports = function(app) {
 
   // Get all products
   app.get('/inventory', function(req, res) {
+
     var dbQuery = "SELECT * FROM products";
     connection.query(dbQuery, function(err, result) {
       if (err) throw err;
       res.json(result);
     });
+
   });
 
   // app.post("/new", function(req, res) {
