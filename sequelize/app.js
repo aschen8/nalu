@@ -1,6 +1,11 @@
 var Sequelize = require('sequelize');
+dialect: mysql;
 //database business.sql
-var connection = new Sequelize('business.sql', 'root', 'password');
+var connection = new Sequelize('business.sql', 'root', 'password', {
+	dialect: 'mysql'
+
+
+
 
 //setting up the connection object. Takes the name of the model,
 //in this case 'article'
