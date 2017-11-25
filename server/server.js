@@ -17,52 +17,52 @@ var connection = mysql.createConnection({
 	database: "business",
 });
 
-// promptManagerAction will present menu options to the manager and trigger appropriate logic
-function promptManagerAction() {
-	// console.log('___ENTER promptManagerAction___');
+// // promptManagerAction will present menu options to the manager and trigger appropriate logic
+// function promptManagerAction() {
+// 	// console.log('___ENTER promptManagerAction___');
 
-	// Prompt the manager to select an option
-	inquirer.prompt([
-		{
-			type: "list",
-			name: "option",
-			message: "Please select an option:",
-			choices: ["View Inventory", "Add to Inventory", "View low inventory", "Add New Product"],
-			filter: function (val) {
-				if (val === "View Inventory") {
-					return "viewInventory";
-				} else if (val === "View Low Inventory") {
-					return "lowInventory";
-				} else if (val === "Add to Inventory") {
-					return "addInventory";
-				} else if (val === "Add New Product") {
-					return "newProduct";
-				} else {
-					// This case should be unreachable
-					console.log("ERROR: Unsupported operation!");
-					exit(1);
-				}
-			}
-		}
-	]).then(function(input) {
-		// console.log('User has selected: ' + JSON.stringify(input));
+// 	// Prompt the manager to select an option
+// 	inquirer.prompt([
+// 		{
+// 			type: "list",
+// 			name: "option",
+// 			message: "Please select an option:",
+// 			choices: ["View Inventory", "Add to Inventory", "View low inventory", "Add New Product"],
+// 			filter: function (val) {
+// 				if (val === "View Inventory") {
+// 					return "viewInventory";
+// 				} else if (val === "View Low Inventory") {
+// 					return "lowInventory";
+// 				} else if (val === "Add to Inventory") {
+// 					return "addInventory";
+// 				} else if (val === "Add New Product") {
+// 					return "newProduct";
+// 				} else {
+// 					// This case should be unreachable
+// 					console.log("ERROR: Unsupported operation!");
+// 					exit(1);
+// 				}
+// 			}
+// 		}
+// 	]).then(function(input) {
+// 		// console.log('User has selected: ' + JSON.stringify(input));
 
-		// Trigger the appropriate action based on the user input
-		if (input.option ==="viewInventory") {
-			displayInventory();
-		} else if (input.option === "lowInventory") {
-			displayLowInventory();
-		} else if (input.option === "addInventory") {
-			addInventory();
-		} else if (input.option === "newProduct") {
-			createNewProduct();
-		} else {
-			// This case should be unreachable
-			console.log("ERROR: Unsupported operation!");
-			exit(1);
-		}
-	})
-};
+// 		// Trigger the appropriate action based on the user input
+// 		if (input.option ==="viewInventory") {
+// 			displayInventory();
+// 		} else if (input.option === "lowInventory") {
+// 			displayLowInventory();
+// 		} else if (input.option === "addInventory") {
+// 			addInventory();
+// 		} else if (input.option === "newProduct") {
+// 			createNewProduct();
+// 		} else {
+// 			// This case should be unreachable
+// 			console.log("ERROR: Unsupported operation!");
+// 			exit(1);
+// 		}
+// 	})
+// };
 
 // displayInventory will retrieve the current inventory from the database and output it to the console
 function displayInventory() {
@@ -286,8 +286,14 @@ function runBusiness() {
 	// console.log('___ENTER runBusiness___');
 
 	// Prompt manager for input
-	promptManagerAction();
+//a.c. Lines 20-46 are commented out, therefore commenting out promptManagerAction(); below
+//	promptManagerAction();
 }
 
 // Run the application logic
 runBusiness();
+
+
+//a.c. adding export modules
+module.exports = connection;
+

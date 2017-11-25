@@ -8,6 +8,8 @@ console.log("api-routes.js is connected");
 //var connection = require("../config/connection.js");
 var express = require('express');
 var app = express();
+//requiring server.js for mysql route
+var connection = require('../server.js');
 
 // Routes
 // =============================================================
@@ -17,6 +19,7 @@ module.exports = function(app) {
   app.get('/inventory', function(req, res) {
 
     var dbQuery = "SELECT * FROM products";
+    //connection not defined here!
     connection.query(dbQuery, function(err, result) {
       if (err) throw err;
       res.json(result);

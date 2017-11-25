@@ -33,16 +33,16 @@ $.get('/inventory', function(data) {
 
 });
 
+//commenting out line 37 to 45 at 11.24 10:53am
+      // for (var i = 0; i < data.length; i++) {
+      //   var row = data[i];
 
-      for (var i = 0; i < data.length; i++) {
-        var row = data[i];
+      //   console.log(row);
 
-        console.log(row);
-
-        for (var prop in row) {
-          console.log(row[prop])
-        }
-      }
+      //   for (var prop in row) {
+      //     console.log(row[prop])
+      //   }
+      // }
       // if (data.length !== 0) {
       //   for (var i = 0; i < data.length; i++) {
       //     var $tr = $('<tr>').append(
@@ -58,7 +58,7 @@ $.get('/inventory', function(data) {
       //     // console.log($tr.wrap('<p>').html());
       //     }
       //   }
-      });
+      //});
 
 // When manager adds to inventory (clicks addBtn)
 // $("#submitButton").on("click", function(event) {
