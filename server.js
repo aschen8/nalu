@@ -7,6 +7,8 @@ console.log("starting server.js");
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var Sequelize = require("sequelize");
+
 
 // Sets up the Express App
 // =============================================================
