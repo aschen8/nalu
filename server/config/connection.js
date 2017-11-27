@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
 	host: "localhost",	
 	port: 3306,
 	user: "root",
-	password: "cjones01",
+	password: "",
 	database: "business"
 });
 
@@ -27,7 +27,7 @@ connection.connect(function(err) {
 
 
 // Set up sequelize connection;
-var sequelize = new Sequelize('business', 'root', 'cjones01', {
+var sequelize = new Sequelize('business', 'root', '', {
     host: 'localhost',
     port: 3306,
     dialect: 'mysql'
