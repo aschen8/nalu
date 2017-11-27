@@ -1,5 +1,5 @@
 /* Ajax push to page */
-console.log("business.js is connected");
+console.log("matt-business.js is connected");
 
 // When the page loads, grab and display all of our inventory
 $.get('/inventory', function(data) {

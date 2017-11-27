@@ -1,3 +1,5 @@
+console.log("business.js is connected");
+
 $.get('/inventory', function(data) {
   console.log("inventory ajax call");
   console.log(data);

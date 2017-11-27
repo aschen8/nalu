@@ -1,13 +1,13 @@
 //set up SQL connection
 console.log("connection.js is connected");
 
-var mysql = require('mysql');
+var mysql = require("mysql");
 
 var connection = mysql.createConnection({
+	host: "localhost",	
 	port: 3306,
-	host: "localhost",
 	user: "root",
-	password: "cjones01",
+	password: "",
 	database: "business"
 });
 

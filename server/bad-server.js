@@ -1,6 +1,6 @@
 // Pull in required dependencies
 // var inquirer = require("inquirer");
-console.log("server.js is connected");
+console.log("server/bad-server.js is connected");
 
 var mysql = require("mysql");
 
