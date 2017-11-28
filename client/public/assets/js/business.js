@@ -1,4 +1,4 @@
-console.log("chryssa-business.js is connected");
+console.log("business.js is connected");
 
 $.get( "/inventory", function( response ) {
   console.log(response);
@@ -14,9 +14,12 @@ $.get( "/inventory", function( response ) {
         resStock = response[i].stock_quantity;
         resReorder = response[i].reorder_quantity;
 
+        // faPencil = $().html("<a href=#><i id="#editID" class="fa fa-pencil"></i></a>")
+
 
         // create the ID's
         rowId = "#results" + (i+1);
+        editID = "#edit" + (i+1);
 
         // populate the divs
         $("#dataTable > tbody").append (
@@ -28,7 +31,9 @@ $.get( "/inventory", function( response ) {
             '</td> <td>' + resPrice + 
             '</td> <td>' + resStock + 
             '</td> <td>' + resReorder + 
+            // '</td> <td>' + faPencil +
             '</td></tr>'
             );
+
         }
 });
