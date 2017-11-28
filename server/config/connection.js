@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
 	host: "localhost",	
 	port: 3306,
 	user: "root",
-	password: "",
+	password: "cjones01",
 	database: "business"
 });
 
@@ -26,25 +26,25 @@ connection.connect(function(err) {
 
 
 
-// Set up sequelize connection;
-var sequelize = new Sequelize('business', 'root', '', {
-    host: 'localhost',
-    port: 3306,
-    dialect: 'mysql'
-});
+// // Set up sequelize connection
+// var sequelize = new Sequelize('business', 'root', 'cjones01', {
+//     host: 'localhost',
+//     port: 3306,
+//     dialect: 'mysql'
+// });
 
 
-//Checking sequelize connection status
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Sequelize connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Sequelize is unable to connect to the database:', err);
-  });
+// // Checking sequelize connection status
+// sequelize
+//   .authenticate()
+//   .then(() => {
+//     console.log('Sequelize connection has been established successfully.');
+//   })
+//   .catch(err => {
+//     console.error('Sequelize is unable to connect to the database:', err);
+//   });
 
 
 // export the connections
 module.exports = connection;
-module.exports = sequelize;
+// module.exports = sequelize;
