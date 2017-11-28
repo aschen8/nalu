@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-dialect: mysql;
+
 //database business.sql
 var connection = new Sequelize('business.sql', 'root', 'password', {
 	dialect: 'mysql'
