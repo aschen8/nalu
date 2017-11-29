@@ -39,11 +39,13 @@ module.exports = function(app) {
 });
 
 
-  app.post("/new", function(req, res) {
+  app.post("/inventory", function(req, res) {
+    console.log("app.post has been called from /inventory");
     console.log("Business Data:");
     console.log(req.body);
-    var dbQuery = "INSERT INTO products (ItemID, product_name, sku, category_name, price, stock_quantity) VALUES (?,?,?)";
-    connection.query(dbQuery, [req.body.author, req.body.body, req.body.created_at], function(err, result) {
+    var dbQuery = "INSERT INTO products (product_name, sku, category, price, stock_quantity, reorder_quantity) VALUES (?,?,?)";
+    connection.query(dbQuery, [req.body], function(err, result) {
+      if (err) throw err;
       console.log("Inventory Successfully Saved!");
       res.end();
     });
