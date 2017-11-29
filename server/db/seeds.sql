@@ -29,3 +29,9 @@ VALUES("Hair Spray", 106, "Hair Products", 8.50, 23.99, 5, 1);
 
 INSERT INTO products(product_name, sku, category, cost, price, stock_quantity, reorder_quantity)
 VALUES("Green Eggs & Ham", 107, "Books", 14.25, 21.00, 1, 0);
+
+INSERT INTO products(product_name, sku, category, cost, price, stock_quantity, reorder_quantity)
+VALUES("Cool Hat", 5643, "Hats", 3.50, 14.99, 4, 10);
+
+INSERT INTO products(product_name, sku, category, cost, price, stock_quantity, reorder_quantity)
+VALUES("Snazzy Socks", 1111, "Under Garments", 1.50, 4.99, 15, 20);

@@ -17,7 +17,7 @@ module.exports = function(app) {
 
   // Get all products
   app.get('/inventory', function(req, res) {
-    console.log("app.get on api-routes has been called");
+    console.log("app.get on api-routes has been called from /inventory");
     var dbQuery = "SELECT * FROM products";
     //connection not defined here!
     connection.query(dbQuery, function(err, result) {
@@ -26,6 +26,18 @@ module.exports = function(app) {
     });
 
   });
+
+  app.get('/index', function(req, res) {
+  console.log("app.get on api-routes has been called from /index");
+  var dbQuery = "SELECT * FROM products";
+  //connection not defined here!
+  connection.query(dbQuery, function(err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
+
+});
+
 
   app.post("/new", function(req, res) {
     console.log("Business Data:");
