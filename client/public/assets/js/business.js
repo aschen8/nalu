@@ -88,3 +88,40 @@ $.get( "/index", function( response ) {
 // feed.run();
 
 // $('#socialCardContent').append()
+
+
+    
+$("saveBtn").click(function(){
+
+    var name=$("#name").val();
+    var category=$("#category").val();
+    var sku=$("#sku").val();
+    var description=$("#description").val();
+    var imgUrl=$("#imgUrl").val();
+    var cost=$("#cost").val();
+    var retailPrice=$("#retailPrice").val();
+    var salePrice=$("#salePrice").val();
+    var reorder=$("#reorder").val();
+
+    $.post( "/index", function(req, res) {
+        console.log(res);
+
+        req.body('name =' + name + '&category=' + category + '&sku=' + sku + '&description=' + description + '&imgURL=' + imgURL + '&cost=' + cost + '&retailPrice=' + retailPrice + '&salePrice=' + salePrice + '&reorder=' + reorder);
+
+
+       // success: function(result){
+       //       $('#response').remove();
+       //       $('#container').append('<p id = "response">' + result + '</p>');
+       //       $('#loading').fadeOut(500, function(){
+       //           $(this).remove();
+
+       //      });
+
+       // }
+
+    });         
+
+   return false;
+
+});
+
