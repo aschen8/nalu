@@ -39,18 +39,32 @@ module.exports = function(app) {
 });
 
 
-  app.post("/new", function(req, res) {
-    console.log("Business Data:");
-    console.log(req.body);
-    var dbQuery = "INSERT INTO products (ItemID, product_name, sku, category_name, price, stock_quantity) VALUES (?,?,?)";
-    connection.query(dbQuery, [req.body.author, req.body.body, req.body.created_at], function(err, result) {
-      console.log("Inventory Successfully Saved!");
-      res.end();
+app.post("/inventory", function(req, res) {
+        var sku = req.body.sku;
+        var product_name = req.body.product_name;
+        var category = req.body.category;
+        var cost = req.body.cost;
+        var price = req.body.price;
+        var stock_quantity = req.body.stock_quantity;
+        var reorder_quantity = req.body.reorder_quantity;
+
+        var addItemQuery = "INSERT INTO products " + 
+        "(sku, product_name, category, cost, price, stock_quantity, reorder_quantity) " +
+        "VALUES (" + sku + ", '" + product_name + "', '"
+        + category + "', " + cost + ", " + price + ", "
+        + stock_quantity + ", " + reorder_quantity + ")"
+
+        console.log(addItemQuery);
+
+        conn.query(addItemQuery, function(err, result) {
+            if (err) throw err;
+            console.log("New item added.");
+        });
+
+        res.redirect("/inventory");
     });
-  });
 
-};
-
+}
 
 
 // Sequelize Routes
