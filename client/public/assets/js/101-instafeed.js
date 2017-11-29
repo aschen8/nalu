@@ -1,5 +1,12 @@
 (function() {
   var Instafeed;
+  var feed = new Instafeed({
+  clientId: '71dd0923bb6946368683a630724ab386',
+  get: 'tagged',
+  tagName: 'newyears',
+  resolution: 'low_resolution'
+});
+feed.run();
 
   Instafeed = (function() {
     function Instafeed(params, context) {
