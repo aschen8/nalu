@@ -9,16 +9,7 @@ var products = {
     orm.all("products", function(res) {
       cb(res);
     });
-  }
-  // create: function(name, cb) {
-  //   orm.create("products", ["product_name", "category", "sku", "description", "image", "cost", "price", "stock_quantity", "reorder_quantity"], [], cb);
-  // },
-  // update: function(id, cb) {
-  //   var condition = "id=" + id;
-  //   orm.update("products", {
-  //     devoured: true
-  //   }, condition, cb);
-  // }
+
 };
 
 // export the module
